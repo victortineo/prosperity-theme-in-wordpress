@@ -1,0 +1,1 @@
+$('.class').css('display', 'none');
