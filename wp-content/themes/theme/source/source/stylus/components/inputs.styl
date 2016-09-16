@@ -1,0 +1,42 @@
+.input-group
+	column(1/2, gutter:0 )
+	padding-right rem(5px)
+	&:nth-of-type(2n+2)
+		padding-right 0
+	input
+		font-size rem(14px)
+		color $black
+		width 100%
+		border 0
+		padding rem(5px)
+		margin rem(2.5px 0)
+		+placeholder()
+			font-weight $font-light
+			color darken($white, 30%)
+.textarea
+	column(1/1)
+	padding rem(2.5px 0)
+	textarea
+		font-size rem(14px)
+		color $black
+		width 100%
+		height rem(70px)
+		border 0
+		padding rem(5px)
+		+placeholder()
+			font-weight $font-light
+			color darken($white, 30%)
+.input-submit
+	column(1/2)
+	padding 0
+	.submit
+		font-weight $font-bold
+		width 100%
+		display block
+		padding rem(5px)
+		background-color transparent
+		border rem(2px) solid $white
+		transition(.2s all ease-in)
+		&:hover
+			background-color $white
+			color $black

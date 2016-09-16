@@ -1,0 +1,56 @@
+.zig
+	overflow hidden
+	font-size 16px
+	background-color $customwhite1
+	&__content-n1
+		background-size cover
+		background-position top right
+		background-repeat no-repeat
+		+below(rem(768px))
+			height 250px !important
+	&__content-n2
+		padding rem(50px 100px 50px 25px)
+		color $white
+		font-size 100%
+		background-color $redcustom3
+		+below(rem(768px))
+			padding rem(25px)
+		.icons
+			font-size 46px
+	.page-header
+		padding 0
+		text-align left
+	.image
+		display inline-block
+		margin 0
+		padding-right rem(20px)
+		+above(rem(480px))
+			display table-cell
+			vertical-align middle
+	.content
+		display inline-block
+		+above(rem(480px))
+			display table-cell
+			vertical-align middle
+	h1
+		font-size 24px
+		font-weight 600
+		color $customred3
+		text-align left
+		@media mqmobile-md 
+			text-align center
+	a
+		font-size 100%
+		color $white
+		text-decoration underline
+	p
+		font-size rem(15px)
+	ul
+		display block
+	li
+		display block
+		padding rem(5px 0)
+		font-size rem(14px)
+		strong
+			display block
+		

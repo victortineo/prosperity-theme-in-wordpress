@@ -1,0 +1,60 @@
+.mod-search
+	position fixed
+	top 0
+	right -100%
+	bottom 0
+	background-color $bluecustom3
+	z-index 100
+	transition(.5s all ease-in)
+	opacity 0
+	&.is-active
+		left 0
+		right 0
+		opacity 1
+	.toggle
+		position absolute
+		padding rem(0 15px)
+		top rem(5px)
+		right rem(15px)
+		font-size rem(56px)
+		font-weight $font-light
+		color $white
+		text-decoration none
+		transition(.2s all ease-in)
+		background-color $black
+		&:hover
+			transform rotate(90deg)
+	form
+		vertical-center(-50%)
+		max-width rem(500px)
+		padding rem(15px)
+		margin 0 auto
+		label,
+		img
+			display inline-block
+			font-size rem(36px)
+			font-weight $font-extra
+			line-height 1.4
+			color $white
+			padding rem(5px 0)
+		.form-group
+			input
+				box-sizing border-box
+				max-width 100%
+				width 100%
+				padding rem(10px)
+				border 0
+				font-weight $font-semi
+				color $bluecustom4
+		.submit
+			display inline-block
+			padding rem(10px)
+			font-size rem(24px)
+			color $black
+			background-color $white
+			border 0
+			margin rem(15px 0)
+			transition(.5s all ease-in)
+			&:hover
+				color $white
+				background-color $bluecustom4

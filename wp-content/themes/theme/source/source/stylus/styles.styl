@@ -1,0 +1,309 @@
+.mod-postit-header
+	position fixed
+	top 0
+	right 0
+	left 0
+	z-index 10
+	background-color $redcustom1
+	text-align center
+	.content
+		display inline-block
+		*display inline
+		padding rem(10px 15px)
+		color $white
+		&.translate
+			li
+				display inline-block
+		&.redes-sociais
+			background-color $redcustom2
+			i
+				margin rem(0 5px)
+				font-size rem(14px)
+		i
+			margin rem(0 10px)
+			color $redcustom3
+		a
+			font-size rem(12px)
+			color $white
+			text-decoration none
+			i
+				color $white
+			&:hover
+				color darken($white, 10%)
+.menu-site
+	position fixed
+	top 0
+	right 0
+	left 0
+	z-index 10
+	transition(.2s all ease-in-out)
+	&.active
+		background-color $bluecustom1
+		li.active
+			a
+				border-bottom rem(2px) solid $redcustom3
+	+below(rem(970px))
+		background-color $bluecustom1 !important
+	+above(rem(970px))
+		background-color transparent
+	.wrapper
+		max-width rem(850px)
+	.branding
+		float left
+		max-width rem(266px)
+		margin rem(20px 0)
+		+below(rem(480px))
+			max-width rem(166px)
+		+above(rem(970px))
+			padding-right rem(25px)
+			max-width rem(180px)
+	.menu
+		vertical-middle(-50%)
+		position absolute
+		top 50%
+		right 0
+		transition(.2s all ease-in-out)
+		+above(rem(970px))
+			vertical-middle(0)
+			position relative
+			top 0
+			float right
+		+below(rem(970px))
+			&.is-active
+				vertical-middle(0)
+				overflow auto
+				position fixed
+				display block
+				top 35px
+				right 0
+				bottom 0
+				width 50%
+				background-color $redcustom1
+				+below(rem(480px))
+					width 80%
+				.menu-list
+					display block
+				.menu-collapse
+					text-align left
+		&-collapse
+			.hamburger
+				display block
+				+above(rem(970px))
+					display none
+				+below(rem(970px))
+					&.is-active
+						padding rem(25px 15px 15px 15px)
+				&-inner
+					background-color $redcustom4
+					&:after,
+					&:before
+						background-color $redcustom4
+		&-list
+			display none
+			padding rem(5px 15px)
+			overflow hidden
+			+above(rem(970px))
+				display block
+				padding 0
+			li
+				display block
+				transition(.5s all ease-in)
+				+above(rem(970px))
+					display inline-block
+					margin rem(0 5px)
+				&:hover
+					background-color $redcustom3
+				a
+					display inline-block
+					padding rem(15px 5px 10px 5px)
+					font-size rem(12px)
+					font-weight $font-bold
+					color $white
+					text-decoration none
+					text-transform uppercase
+					+above(rem(970px))
+						padding rem(30px 5px 15px 5px)
+				.icon
+					font-size rem(20px)
+					line-height 0
+			li.search-site a
+				transform rotate(-90deg)
+#slider-site
+	display block
+	.item
+		position relative
+		min-height 100vh
+		height 100%
+		max-height rem(800px)
+		background-position center
+		background-size cover
+		background-repeat no-repeat
+		.slider-title
+			display none
+		+above(rem(970px))
+			height 100vh
+			.slider-title
+				display block
+				position absolute
+				z-index 1
+				bottom rem(70px)
+				right rem(25px)
+				h2
+					display inline-block
+					padding rem(5px 10px)
+					font-size rem(14px)
+					font-weight $font-light
+					color $white
+					&:hover,
+					&.is-active
+						border-top rem(3px) solid $bluecustom2
+					a
+						color $white
+						text-decoration none
+		.caption
+			padding rem(25px 15px 0 0)
+			font-size rem(24px)
+			font-weight $font-normal
+			text-transform uppercase
+			line-height 1.2
+			color $white
+			+above(rem(970px))
+				position absolute
+				top 50%
+				left 0
+				right 0
+				vertical-middle(-50%)
+		.header
+			max-width rem(480px)
+			background-color alpha($bluecustom1, 80%)
+			padding rem(25px)
+			+above(rem(970px))
+				max-width rem(580px)
+			.underline
+				width rem(120px)
+				height rem(3px)
+				zoom 1
+			h1
+				font-size rem(24px)
+				font-weight $font-extra
+				text-transform uppercase
+				margin rem(15px 0)
+				i
+					font-size rem(36px)
+		.item-footer
+			padding rem(25px)
+.homepage
+	background-color $white
+	padding rem(50px 10px)
+	.content
+		center(rem(970px))
+		text-align center
+		font-size rem(16px)
+		font-weight $font-normal
+		line-height 1.2
+		text-transform uppercase
+		color $bluecustom3
+		+above(rem(768px))
+			font-size rem(18px)
+.services
+	background-color $bluecustom4
+	padding rem(70px 10px)
+	.content
+		column(1/1)
+		font-size rem(14px)
+		line-height 1.4
+		color $white
+		padding rem(25px 0)
+		+above(rem(768px))
+			column(4/12)
+			padding rem(0)
+		.underline
+			width rem(50px)
+			height rem(3px)
+			background-color $bluecustom2
+		h1
+			font-size rem(32px)
+			font-weight $font-normal
+			text-transform uppercase
+			line-height 1.4
+.footer
+	padding rem(70px 0 0 0)
+	background-color $redcustom3
+	background-image url('../images/background-footer.png')
+	background-position right center
+	background-repeat no-repeat
+	color $white
+	.title
+		display block
+		font-size rem(14px)
+		font-weight $font-bold
+		padding-bottom rem(20px)
+	.widget
+		column(1/1, gutter: 0)
+		padding rem(15px 0)
+		+above(rem(480px))
+			column(2/6, gutter: 0)
+		+above(rem(768px))
+			column(1/6, gutter: 0)
+			padding rem(0 5px)
+		a
+			font-size rem(13px)
+			font-weight $font-light
+			color $white
+			text-decoration none
+			line-height 2
+			&:hover
+				border-bottom rem(1px) solid $black
+	.widget.form
+		column(3/6, gutter: 0)
+		float right
+		+below(rem(768px))
+			column(1/1, gutter: 0)
+	.widgetfull
+		column(1/1)
+		clear both
+		padding-top rem(25px)
+		padding-bottom rem(15px)
+		font-size rem(13px)
+		font-weight $font-light
+		.content
+			column(1/1)
+			padding rem(5px 0)
+			+above(rem(768px))
+				column(1/6, gutter: 0)
+			i
+				display table-cell
+				vertical-align middle
+				padding-right 10px
+				font-size rem(18px)
+			a,p
+				display table-cell
+				vertical-align middle
+				font-size rem(13px)
+				font-weight $font-light
+				text-decoration none
+				color $white
+			.creditos
+				a
+					font-weight $font-bold
+					color $white
+					text-decoration none
+	.widgetfull.locale
+		.content
+			column(1/1)
+			+above(rem(480px))
+				display inline-block
+				width auto
+	.widgetfull.corporate
+		padding rem(5px 0)
+		background-color $redcustom2
+		.content
+			column(1/1)
+			text-align center
+			+above(rem(480px))
+				text-align left
+				column(3/6, gutter: 0)
+				&:last-child
+					text-align right
+		a
+			display inline

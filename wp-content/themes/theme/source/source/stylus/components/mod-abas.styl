@@ -1,0 +1,120 @@
+.mod-abas
+	background-color $graycustom3
+	.page-header
+		padding rem(100px 0 50px 0)
+		.underline
+			height rem(3px)
+			margin 0 auto
+		h1
+			font-size rem(36px)
+			font-weight $font-bold
+			color $redcustom3
+	.wrapper-nav-tabs
+		padding 0
+		margin 0
+		border-bottom rem(1px) solid $bluecustom2
+		.nav-tabs
+			center(rem(970px))
+			li
+				column(2/8, gutter: 0)
+				background-color $bluecustom4
+				text-align center
+				transition(.2s all ease-in)
+				+above(rem(768px))
+					column(1/8, gutter: 0)
+					text-align center
+				a
+					position relative
+					display block
+					background-color transparent
+					font-size rem(12px)
+					font-size $font-semi
+					color $white
+					text-transform uppercase
+					border 0
+					border-right rem(2px) solid lighten($bluecustom4, 20%)
+					border-radius 0
+					padding 0
+					margin rem(10px 0)
+					.title
+						display none
+					+above(rem(768px))
+						min-height rem(110px)
+						.title
+							display inline-block
+					&:hover
+						background-color transparent
+					.content
+						+above(rem(768px))
+							vertical-center(-50%)
+						.icon
+							font-size rem(42px)
+							display block
+							margin 0 auto 10px auto
+							img
+								max-height rem(45px)
+				&:last-child
+					a
+						border-color transparent
+				&:hover
+					background-color $bluecustom3
+					a
+						border-color transparent
+				&.active
+					background-color $bluecustom2
+					a
+						border-color transparent
+	.wrapper-abas
+		background-color $white
+		.tab-content
+			center(rem(900px))
+			padding rem(50px 10px)
+			font-size rem(14px)
+			line-height 1.4
+			.page-header
+				padding 0
+				text-align left
+				h1
+					color $bluecustom4
+					text-align left
+					font-size rem(19px)
+					font-weight $font-semi
+					i
+						font-size rem(36px)
+						margin rem(10px)
+		.panel-content
+			padding rem(5px 10px)
+			.panel-button
+				display block
+				padding rem(7px 15px)
+				background-color $bluecustom2
+				border-radius rem(8px)
+				transition(.2s all ease-in)
+				color $white
+				font-weight $font-semi
+				text-decoration none
+				overflow auto
+				zoom 1
+				+above(rem(480px))
+					padding rem(7px 50px)
+				&:hover
+					text-decoration none
+				&.collapsed
+					background-color $bluecustom4
+					font-weight $font-normal
+					.panel-caret
+						i:before
+							content '\f0d7' !important
+				.titulo
+					float left
+				.panel-caret-wrapper
+					float right
+					text-align right
+					.panel-caret
+						+above(rem(480px))
+							i
+								margin-left rem(25px)
+			.panel-collapse
+				padding rem(20px 10px)
+				+above(rem(480px))
+					padding rem(20px 50px)

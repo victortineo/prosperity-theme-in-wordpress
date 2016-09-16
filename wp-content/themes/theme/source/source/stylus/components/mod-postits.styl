@@ -1,0 +1,17 @@
+.mod-postits
+	position fixed
+	right 0
+	bottom 30%
+	z-index 5
+	opacity 0
+	display none
+	+above(rem(480px))
+		opacity 1
+		display block
+	a
+		display block
+		padding rem(15px)
+		margin-bottom rem(1px)
+		background-color $redcustom5
+		color $white
+		text-decoration none

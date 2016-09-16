@@ -1,0 +1,39 @@
+.subsections
+	position relative
+	height 90vh
+	min-height rem(400px)
+	text-align center
+	background-position top center
+	background-size cover
+	background-repeat no-repeat
+	font-size rem(16px)
+	background-color transparent
+	&:first-child
+		min-height 100vh
+		margin-bottom rem(-160px)
+		.content
+			vertical-center(-50%)
+			top 40% !important
+			padding rem(0 10px)
+		+above(rem(768px))
+			background-attachment fixed
+	&:nth-of-type(3)
+		+above(rem(768px))
+			background-attachment fixed
+	.content
+		vertical-center(-50%)
+		padding rem(0 10px)
+	h1
+		font-size rem(24px)
+		font-weight $font-light
+		text-transform uppercase
+		line-height 1.2
+		margin rem(0 0 15px 0)
+		+above(rem(768px))
+			font-size rem(36px)
+		strong
+			font-weight $font-semi
+	p
+		font-size rem(16px)
+		font-weight $font-light
+		color alpha($white, 60%)
