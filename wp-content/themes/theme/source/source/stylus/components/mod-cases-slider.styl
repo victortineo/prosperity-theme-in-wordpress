@@ -1,0 +1,55 @@
+.mod-cases-slider
+	position relative
+	background-color $graycustom4
+	overflow hidden
+	.item
+		overflow hidden
+		zoom 1
+		.background
+			min-height rem(250px)
+			background-position center
+			background-size cover
+			+above(rem(768px))
+				position absolute
+				height 100%
+				width 45%
+				min-height rem(100%)
+		.content
+			width 100%
+			padding rem(50px 25px)
+			min-height rem(250px)
+			font-size rem(15px)
+			color $white
+			+above(rem(768px))
+				width 55%
+				float right
+				min-height rem(450px)
+			.autor,
+			.cargo
+				font-weight $font-light
+				display block
+			h1
+				text-transform uppercase
+				
+	.owl-dots
+		position absolute
+		right 0
+		width 100%
+		bottom 0
+		z-index 2
+		padding rem(15px)
+		text-align center
+		+above(rem(768px))
+			width 55%
+			left none
+			padding rem(25px)
+			text-align left
+		.owl-dot
+			display inline-block
+			width rem(10px)
+			height rem(10px)
+			background-color $graycustom1
+			border-radius 100%
+			cursor pointer
+			&.active
+				background-color $bluecustom2

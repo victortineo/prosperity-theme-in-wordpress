@@ -8,7 +8,7 @@
  * @since 1.9.0
  */
 ?>
-<section id="comments" class="content-wrap" itemscope itemtype="http://schema.org/Comment">
+<section id="comments" class="content-wrap comments" itemscope itemtype="http://schema.org/Comment">
 	<?php if ( post_password_required() ) : ?>
 		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view all comments.', 'odin' ); ?></p>
 </section><!-- #comments -->
@@ -17,7 +17,7 @@
 	endif;
 
 	if ( have_comments() ) : ?>
-		<h2 id="comments-title" class="page-header">
+		<h2 id="comments-title" class="comments-title">
 			<?php
 			comments_number( __( '0 Comments', 'odin' ), __( '1 Comment', 'odin' ), __( '% Comments', 'odin' ) );
 			echo ' ' . __( 'to', 'odin' ) . ' <span>&quot;' . get_the_title() . '&quot;</span>';

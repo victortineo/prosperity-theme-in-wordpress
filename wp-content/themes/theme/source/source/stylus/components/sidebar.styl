@@ -1,0 +1,68 @@
+.sidebar
+	column(1/1)
+	+above(rem(768px))
+		column(1/4)
+	&-lista
+		.header
+			padding rem(15px)
+			text-align center
+			border rem(1px) solid $bluecustom4
+			.title
+				display block
+				text-align center
+				font-size rem(15px)
+				font-weight $font-semi
+				color $bluecustom3
+				text-transform uppercase
+		.content
+			padding rem(15px)
+			li
+				position relative
+				display block
+				padding rem(3px 0)
+				&:before
+					content '.'
+					font-size rem(32px)
+					color darken($white, 35%)
+					margin-right rem(5px)
+					line-height 0
+			a
+				color darken($white, 70%)
+				font-size rem(14px)
+	&-newsletter
+		background-color $bluecustom3
+		color $white
+		.header
+			background-color $bluecustom4
+			padding rem(15px)
+			text-align center
+			.title
+				display block
+				padding rem(10px)
+				font-size rem(19px)
+				font-weight $font-semi
+				text-transform uppercase
+				border rem(1px) solid $bluecustom3
+		.content
+			padding rem(15px)
+			.inputs-group
+				margin-bottom rem(5px)
+				input
+					width 100%
+					padding rem(5px 10px)
+					text-align center
+					color $black
+					border 0
+					background-color $white
+			.inputs-button
+				margin-top rem(15px)
+				.button
+					display block
+					width 100%
+					text-align center
+					background-color $redcustom4
+					color $white
+					border 0
+					padding rem(5px 15px)
+	.widget
+		margin-bottom rem(15px)

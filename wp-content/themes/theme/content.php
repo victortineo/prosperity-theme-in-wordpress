@@ -9,7 +9,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> class="main-posts">
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) :
@@ -18,7 +18,10 @@
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
 		?>
-
+		<?php 
+			$share = '[ssba url='. get_permalink() . ' title="Share"]';
+			echo do_shortcode($share);
+		?>
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
 				<?php odin_posted_on(); ?>

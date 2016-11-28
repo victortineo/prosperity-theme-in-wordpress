@@ -24,12 +24,14 @@ get_header(); ?>
 </header>
 
 <main id="content" class="mod-page" tabindex="-1" role="main">
+	<?php if (get_the_content()):?>
 	<article class="page-content">
 		<div class="wrapper">
 			<div class="underline"></div>
 			<?php the_content(); ?>
 		</div>
 	</article>
+	<?php endif; ?>
 </main><!-- #main -->
 <?php endwhile; ?>
 <?php

@@ -1,0 +1,19 @@
+.mod-abas.quem-atendemos
+	background-color $graycustom3
+	.wrapper-nav-tabs
+		.nav-tabs
+			li
+				column(4/8, gutter: 0)
+				background-color $bluecustom4
+				text-align center
+				transition(.2s all ease-in)
+				+above(rem(768px))
+					column(1/8, gutter: 0)
+					text-align center
+				a
+					padding rem(0 5px)
+					min-height rem(35px)
+					.title
+						display inline-block
+					+above(rem(768px))
+						min-height rem(100px)

@@ -4,10 +4,6 @@
  *
  * Template Name: Homepage
  *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package Odin
- * @since 2.2.0
  */
 
 get_header(); ?>
@@ -107,12 +103,20 @@ $slider='';
 <?php endif; ?>
 
 
-<?php if(get_field('clientes')): ?>
+<?php 
+$args = array(
+	'post_type' => 'clientes',
+	'order'		=> 'ASC'
+);
+$inner_query = new WP_Query( $args );
+if ($inner_query->have_posts()):
+?>
 <section class="slider-clients-wrapper">
 	<div id="slider-clients" class="owl-carousel wrapper">
-		<?php while(has_sub_field('clientes')): ?>
+		<?php while ($inner_query->have_posts()): $inner_query->the_post(); ?>
+		<?php $logo = get_field('logo'); ?>
 		<figure class="item">
-		<img src="<?php the_sub_field('imagem') ?>" alt="">
+			<img src="<?php echo $logo; ?>" alt="<?php the_title(); ?>">
 		</figure>
 		<?php endwhile; ?>
 	</div>
@@ -120,6 +124,7 @@ $slider='';
 <?php endif; ?>
 
 <?php endwhile; ?>
+
 </main><!-- #content -->
 
 <?php

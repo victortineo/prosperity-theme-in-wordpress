@@ -48,6 +48,7 @@ $.getScript( url, function() {
       loop: true,
       items: 1,
       animateOut: 'fadeOut',
+      autoHeight: true,
       responsive: {
       	970: {
       		mouseDrag: false
@@ -117,7 +118,23 @@ $.getScript( url, function() {
         }
       }
     });
+/* * * * * * * * * * * * * * * * * * 
+*     OWL-CAROUSEL QUEM ATENDEMOS
+* * * * * * * * * * * * * * * * * * */
+var owl4 =  $("#quem-atendemos-owl");
+  owl4.owlCarousel({
+    items: 1,
+    dots: true,
+    dotsContainer: '#carousel-custom-dots',
+    animateOut: 'fadeOut',
+    autoHeight: true,
+  });
+  $('.owl-dot').click(function () {
+    owl4.trigger('to.owl.carousel', [$(this).index(), 300]);
+  });
+  
 });
+
 /* * * * * * * * * * * * * * * * * * 
 *           SEARCH SITE
 * * * * * * * * * * * * * * * * * * */
@@ -156,9 +173,74 @@ function zigzag(e) {
     $zigContent2 = $('.zig__n'+count+' .zig__content-n1').css('height', $height+'px');
   });
 }
-url = 'libraries/bootstrap/dist/js/bootstrap.min.js';
-$.getScript( themeUrl+url, function(){
+url = 'http://madknow.com.br/prosperity/wp-content/themes/theme/assets/libraries/bootstrap/dist/js/bootstrap.min.js';
+$.getScript( url, function(){
 
 });
+/* * * * * * * * * * * * * * * * * * 
+*   Formulário trabalhe conosco
+* * * * * * * * * * * * * * * * * * */
+url = 'http://madknow.com.br/prosperity/wp-content/themes/theme/assets/libraries/jquery.form/jquery.form.js';
+$.getScript( url, function(){
+
+  var $trabalheConosco = $('#formTrabalheConosco');
+  var $waiting =  $('#formTrabalheConosco #response .waiting');
+  var $success =  $('#formTrabalheConosco #response .success');
+  var $error =  $('#formTrabalheConosco #response .error');
+  $trabalheConosco.on('submit', function(event) {
+    event.preventDefault();
+    $waiting.css('display', 'block');
+    $(this).ajaxSubmit({
+      success: function(response) {
+        $trabalheConosco[0].reset();
+        $waiting.css('display', 'none');
+        $success.css('display', 'block');
+      },
+      error: function(response) {
+        console.log(response);
+        $waiting.css('display', 'none');
+        $error.css('display', 'block');
+      }
+    });
+    setTimeout(function(){
+      $success.css('display', 'none');
+      $error.css('display', 'none');
+    }, 10000);
+  });
+
+});
+
+// Escolaridade
+var $adicionaEscola = $('#adicionaEscola');
+$adicionaEscola.on('click', adicionarEscola);
+function adicionarEscola(e) {
+  e.preventDefault();
+  var $escola = $('#formTrabalheConosco .escolaridade .escola.desactived');
+  if ($escola.length != 0) {
+    $escola.each(function(index, el) {
+      if (index === 0) {
+        $(this).removeClass('desactived');
+      }
+    });
+  } else {
+    $adicionaEscola.css('display', 'none');
+  }
+}
+// Profissao
+var $adicionaProfissao = $('#adicionaProfissao');
+$adicionaProfissao.on('click', adicionarProfissao);
+function adicionarProfissao(e) {
+  e.preventDefault();
+  var $profissao = $('#formTrabalheConosco .profissoes .profissao.desactived');
+  if ($profissao.length != 0) {
+    $profissao.each(function(index, el) {
+      if (index === 0) {
+        $(this).removeClass('desactived');
+      }
+    });
+  } else {
+    $adicionaProfissao.css('display', 'none');
+  }
+}
 
 });

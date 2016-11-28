@@ -4,10 +4,6 @@
  *
  * Template Name: Nossa cultura
  *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package Odin
- * @since 2.2.0
  */
 get_header();
 // Vars
@@ -104,7 +100,6 @@ $equipe = get_field('equipe');
 				<img src="<?php echo $perfil; ?>" alt="<?php the_title(); ?>">
 				<figcaption class="description">
 					<strong class="nome"><?php the_title(); ?></strong>
-					<span class="cargo"><?php echo $cargo; ?></span>
 					<div class="description-content">
 						<?php the_content(); ?>
 					</div>

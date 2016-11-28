@@ -11,7 +11,8 @@
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php if ( ! get_option( 'site_icon' ) ) : ?>
@@ -30,7 +31,7 @@
 		<?php $odin_general_opts = get_option( 'odin_general' ); ?>
 		<div class="wrapper">
 			<div class="content hidden-desktop">
-				<i class="icon-trabalhe-conosco" aria-hidden="true"></i> <a href="#">Trabalhe conosco</a>
+				<i class="icon-trabalhe-conosco" aria-hidden="true"></i> <a href="<?php echo esc_url( home_url( '/' ) ); ?>trabalhe-conosco">Trabalhe conosco</a>
 			</div>
 			<div class="content hidden-tablet">
 				<i class="icon-open-envelope" aria-hidden="true"></i> <a href="mailto:<?php the_field('e-mail', 'option'); ?>"><?php the_field('e-mail', 'option'); ?></a>
@@ -54,7 +55,9 @@
 	<div class="menu-site">
 		<div class="wrapper">
 		<figure class="branding">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img src="<?php the_field('logo', 'option') ?>" alt="">
+			</a>
 		</figure>
 		<nav class="menu" role="navigation">
 			<div class="menu-collapse">
@@ -81,19 +84,7 @@
 		</div><!-- .wrapper -->
 	</div><!-- .menu-site -->
 
-<aside id="search" class="mod-search">
-<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-<img src="<?php the_field('logo', 'option') ?>" alt="">
-	<label for="menu-search" class="sr-only">
-		<?php _e( 'Search:', 'odin' ); ?>
-	</label>
-	<div class="form-group">
-		<input type="search" placeholder="Pesquise em nosso site" value="<?php echo get_search_query(); ?>" class="form-control" name="s" id="menu-search" />
-	</div>
-	<button id="submit-search" type="submit" class="submit"><?php _e( 'Search', 'odin' ); ?></button>
-</form>
-<a href="#" id="search-toggle" class="toggle">X</a>
-</aside>
+<?php get_search_form($echo = true); ?>
 
 </div><!-- #main-navigation-->
 

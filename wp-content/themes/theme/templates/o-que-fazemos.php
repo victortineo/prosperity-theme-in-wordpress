@@ -4,10 +4,6 @@
  *
  * Template Name: O que fazemos
  *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package Odin
- * @since 2.2.0
  */
 get_header();
 // Vars
@@ -60,7 +56,7 @@ $servicos = get_field('servicos');
 		$count++;
 		?>
 		<li role="presentation" <?php if($count == 1): ?> class="active" <?php endif; ?>>
-			<a href="#servico<?php echo $count; ?>" aria-controls="tab-panel" role="tab" data-toggle="tab">
+			<a href="#servico<?php echo $count; ?>" aria-controls="servico<?php echo $count; ?>" role="tab" data-toggle="tab">
 				<div class="content">
 					<i class="icon <?php echo $icone; ?>"></i>
 					<strong class="title"><?php the_title(); ?></strong>
@@ -104,10 +100,10 @@ $servicos = get_field('servicos');
 			          <div class="titulo"><?php echo $titulo; ?></div>
 			          <div class="panel-caret-wrapper"><span class="panel-caret">  <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
 			        </a></h2>
-				    <div id="collapse<?php echo $inner_count; ?>" class="panel-collapse collapse <?php if($inner_count == 1): ?>in<?php endif; ?>" role="tabpanel" aria-labelledby="headingOne">
+				    <div id="collapse<?php echo $inner_count; ?>" class="panel-collapse collapse <?php if($inner_count == 1): ?>in<?php endif; ?>" role="tabpanel" aria-labelledby="collapse<?php echo $inner_count; ?>">
 				      <?php echo $texto; ?>
 				    </div>
-				  </div>
+				  </div><!-- .panel-content -->
 				<?php endwhile; ?>
 				</div><!-- .panel-group -->
 				<?php endif; ?>
@@ -118,6 +114,8 @@ $servicos = get_field('servicos');
 </section>
 <!-- ./ Sistema de abas -->
 <?php endif; ?>
+
+
 
 <?php if ($ebook): ?>
 <section class="mod-ebook">

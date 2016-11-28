@@ -6,14 +6,16 @@
  * @since 2.2.0
  */
 ?>
-
-<form method="get" id="searchform" class="form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-	<div class="input-group">
-		<input type="search" class="form-control" name="s" id="s" value="<?php echo get_search_query(); ?>" placeholder="<?php _e( 'Search', 'odin' ); ?>" />
-		<span class="input-group-btn">
-			<button type="submit" class="btn btn-default" value="<?php esc_attr_e( 'Search', 'odin' ); ?>">
-				<i class="glyphicon glyphicon-search"></i>
-			</button>
-		</span><!-- /input-group-btn -->
-    </div><!-- /input-group -->
-</form><!-- /searchform -->
+<aside id="search" class="mod-search">
+	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+	<img src="<?php the_field('logo', 'option') ?>" alt="">
+		<label for="menu-search" class="sr-only">
+			<?php _e( 'Search:', 'odin' ); ?>
+		</label>
+		<div class="form-group">
+			<input type="search" placeholder="Pesquise em nosso site" value="<?php echo get_search_query(); ?>" class="form-control" name="s" id="menu-search" />
+		</div>
+		<button id="submit-search" type="submit" class="submit"><?php _e( 'Search', 'odin' ); ?></button>
+	</form>
+	<a href="#" id="search-toggle" class="toggle">X</a>
+</aside>

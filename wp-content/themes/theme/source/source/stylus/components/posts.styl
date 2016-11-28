@@ -1,0 +1,75 @@
+.mod-post
+	padding rem(50px 10px)
+	+above(rem(768px))
+		padding rem(100px 10px)
+	.post-main
+		column(1/1)
+		+above(rem(768px))
+			column(3/4)
+		.entry-header
+			padding-bottom rem(15px)
+			.ssba
+				img
+					margin 0
+				div
+					text-align left !important
+			h1
+				margin rem(0 0 5px 0)
+				text-transform uppercase
+		.entry-date,
+		.entry-meta
+			font-size rem(14px)
+			color $bluecustom4
+		.entry-meta
+			padding-top rem(15px)
+		.aligncenter
+			display block
+			text-align center
+			margin 0 auto
+		.alignright
+			float right
+		.alignleft
+			float left
+		img
+			margin rem(2px 5px)
+		a
+			font-size rem(14px)
+			color $bluecustom4
+		p,
+		b,
+		strong,
+		em,
+		li,
+		label
+			font-size rem(14px)
+			line-height 1.4
+			color $black
+			margin-bottom rem(5px)
+		// Comentarios
+	.comments
+		padding rem(25px 0)
+		+above(rem(480px))
+			padding rem(50px 0)
+		&-body,
+		&-left
+			display block
+			margin 0 auto
+			text-align center
+			img
+				margin 0 auto
+			+above(rem(480px))
+				text-align left
+				display inline-block
+		&-title,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6
+			font-size rem(18px)
+			text-align left
+			margin rem(15px 0)
+			color $bluecustom4
+		.comment-body
+			padding rem(10px 0)

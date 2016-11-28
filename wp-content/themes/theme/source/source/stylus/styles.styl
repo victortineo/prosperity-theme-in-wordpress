@@ -207,7 +207,9 @@
 			font-size rem(18px)
 .services
 	background-color $bluecustom4
-	padding rem(70px 10px)
+	padding rem(50px 10px)
+	+above(rem(480px))
+		padding rem(150px 10px)
 	.content
 		column(1/1)
 		font-size rem(14px)
@@ -227,12 +229,13 @@
 			text-transform uppercase
 			line-height 1.4
 .footer
-	padding rem(70px 0 0 0)
+	padding rem(100px 0 0 0)
 	background-color $redcustom3
 	background-image url('../images/background-footer.png')
 	background-position right center
 	background-repeat no-repeat
 	color $white
+	clear both
 	.title
 		display block
 		font-size rem(14px)
@@ -262,7 +265,7 @@
 	.widgetfull
 		column(1/1)
 		clear both
-		padding-top rem(25px)
+		padding-top rem(100px)
 		padding-bottom rem(15px)
 		font-size rem(13px)
 		font-weight $font-light
@@ -289,6 +292,7 @@
 					color $white
 					text-decoration none
 	.widgetfull.locale
+		
 		.content
 			column(1/1)
 			+above(rem(480px))

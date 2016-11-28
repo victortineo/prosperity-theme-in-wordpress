@@ -25,21 +25,21 @@ if ( ! function_exists( 'odin_comment_loop' ) ) {
 ?>
 				<li <?php comment_class( 'media' ); ?> id="li-comment-<?php comment_ID(); ?>">
 					<article id="div-comment-<?php comment_ID(); ?>" class="comment-body comment-author vcard">
-						<div class="media-left">
+						<div class="comments-left">
 							<?php echo str_replace( "class='avatar", "class='media-object avatar", get_avatar( $comment, 64 ) ); ?>
 						</div>
-						<div class="media-body">
+						<div class="comments-body">
 							<footer class="comment-meta">
-								<h5 class="media-heading">
+								<p class="media-heading">
 									<?php echo sprintf( '<strong><span class="fn">%1$s</span></strong>
-														 %2$s <a href="%3$s"><time datetime="%4$s">%5$s %6$s </time></a>
-														 <span class="says"> %7$s</span>',
+														 %2$s <a href="%3$s"><time datetime="%4$s">%5$s </time></a>
+														 ',
 														 get_comment_author_link(), __( 'in', 'odin' ),
 														 esc_url( get_comment_link( $comment->comment_ID ) ),
 														 get_comment_time( 'c' ),
 														 get_comment_date(), __( 'at', 'odin' ),
 														 get_comment_time(), __( 'said:', 'odin' ) ); ?>
-								</h5>
+								</p>
 
 								<?php edit_comment_link( __( 'Edit', 'odin' ), '<span class="edit-link">', ' </span>' ); ?>
 

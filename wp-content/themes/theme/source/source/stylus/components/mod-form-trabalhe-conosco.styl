@@ -1,0 +1,151 @@
+.mod-form-trabalhe-conosco
+	padding 0
+	.wrapper
+		center(rem(600px))
+		.page-header
+			h1
+				color $redcustom3
+			h2
+				font-size rem(17px)
+				font-weight $font-semi
+				color $redcustom3
+	.desactived
+		opacity 0
+		height 0
+		width 0
+		overflow hidden
+	.button
+		display inline-block
+		padding rem(5px)
+		margin-bottom rem(15px)
+		background-color darken($white, 25%)
+		font-weight $font-semi
+		color $black
+		text-decoration none
+		&:hover
+			background-color darken($white, 35%)
+	.submit
+		&-button
+			background-color $redcustom3
+			border 0
+			border-radius 0
+			color $white
+			&:hover
+				background-color darken($redcustom3, 25%)
+	#response
+		padding rem(5px 0)
+		.waiting
+			display none
+			color orange
+		.success
+			display none
+			color green
+		.error
+			display none
+			color red
+	.inputs-group
+		overflow auto
+		margin-bottom rem(15px)
+		& > .inputs-group
+			margin 0
+		&-four
+			margin-bottom rem(15px)
+			overflow auto
+			input,
+			select
+				column(1/2)
+				padding rem(7px 10px)
+				font-size rem(12px)
+				border rem(1px) solid darken($white, 20%)
+				border-radius rem(5px)
+				color $black
+				margin-bottom rem(15px)
+				+above(rem(480px))
+					column(1/4)
+					margin-bottom 0
+				+placeholder()
+					font-size rem(12px)
+					font-weight $font-light
+					color $black
+		&-label
+			overflow auto
+			.input
+				column(1/1)
+				display table
+				margin-bottom rem(15px)
+				input,
+				select,
+				label
+					float right
+					display table-cell
+					vertical-align middle
+				label
+					float none
+				+above(rem(480px))
+					column(1/2)
+		input,
+		select
+			column(1/1)
+			padding rem(7px 10px)
+			font-size rem(12px)
+			border rem(1px) solid darken($white, 20%)
+			border-radius rem(5px)
+			color $black
+			margin-bottom rem(15px)
+			option
+				font-size rem(12px)
+				font-weight $font-light
+			+above(rem(480px))
+				column(1/2)
+				margin-bottom 0
+			+placeholder()
+				font-size rem(12px)
+				font-weight $font-light
+				color $black
+		.dateclass
+			&.placeholderclass::before
+				width 100%
+				content attr(data-placeholder)
+				background-color #FFFFFF
+				color $black
+				font-weight $font-light
+			&.placeholderclass:hover::before
+				width 0%
+				content ''
+	.textarea-group
+		margin-bottom rem(15px)
+		textarea
+			width 100%
+			max-width 100%
+			height rem(80px)
+			max-height rem(80px)
+			min-height rem(80px)
+			padding rem(7px 10px)
+			font-size rem(12px)
+			border rem(1px) solid darken($white, 20%)
+			border-radius rem(5px)
+			color $black
+			+placeholder()
+				font-size rem(12px)
+				font-weight $font-light
+				color $black
+	input,
+	select
+		padding rem(7px 10px)
+		font-size rem(12px)
+		border rem(1px) solid darken($white, 20%)
+		border-radius rem(5px)
+		color $black
+		margin-bottom rem(15px)
+		+above(rem(480px))
+			margin-bottom 0
+		+placeholder()
+			font-size rem(12px)
+			font-weight $font-light
+			color $black
+	.section
+		padding rem(25px 10px)
+		color $redcustom3
+		&:nth-of-type(2n+2)
+			background-color darken($white, 3%)
+		
