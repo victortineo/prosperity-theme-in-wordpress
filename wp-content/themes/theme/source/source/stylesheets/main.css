@@ -514,6 +514,13 @@ h6 {
   border: 0.125rem solid #bb0411;
   text-decoration: none;
 }
+.button-1:hover,
+.mod-page .page-content p a:hover,
+.button-1:focus,
+.mod-page .page-content p a:focus {
+  text-decoration: none;
+  color: #fff;
+}
 .input-group {
   *zoom: 1;
   float: left;
@@ -1830,7 +1837,7 @@ h6 {
   margin-bottom: 0.938rem;
 }
 .mod-page .page-content h1 {
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: #bb0411;
 }
@@ -1899,33 +1906,15 @@ h6 {
   background-color: #fff;
 }
 .mod-pessoas .content {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 100%;
-  margin-left: 0%;
-  margin-right: 0%;
   padding: 0.938rem;
 }
-.mod-pessoas .content:before,
-.mod-pessoas .content:after {
-  content: '';
-  display: table;
-}
-.mod-pessoas .content:after {
-  clear: both;
-}
-.mod-pessoas .content:last-child {
-  margin-right: 0%;
-}
-@media only screen and (min-width: 36.625rem) {
+@media only screen and (min-width: 30rem) and (max-width: 47.938rem) {
   .mod-pessoas .content {
     *zoom: 1;
     float: left;
     clear: none;
     text-align: inherit;
-    width: 33.33333333333333%;
+    width: 50%;
     margin-left: 0%;
     margin-right: 0%;
   }
@@ -1937,11 +1926,37 @@ h6 {
   .mod-pessoas .content:after {
     clear: both;
   }
-  .mod-pessoas .content:nth-child(4n) {
+  .mod-pessoas .content:nth-child(3n) {
     margin-right: 0%;
     float: right;
   }
-  .mod-pessoas .content:nth-child(4n+1) {
+  .mod-pessoas .content:nth-child(3n+1) {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  .mod-pessoas .content {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 25%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  .mod-pessoas .content:before,
+  .mod-pessoas .content:after {
+    content: '';
+    display: table;
+  }
+  .mod-pessoas .content:after {
+    clear: both;
+  }
+  .mod-pessoas .content:nth-child(5n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .mod-pessoas .content:nth-child(5n+1) {
     clear: both;
   }
 }
@@ -2159,6 +2174,7 @@ h6 {
   font-weight: 600;
   color: #41c7fc;
   line-height: 1.1;
+  min-height: 2.188rem;
 }
 #slider-services .item a {
   display: inline-block;
@@ -2625,7 +2641,7 @@ h6 {
 }
 .menu-site {
   position: fixed;
-  top: 0;
+  top: 36px;
   right: 0;
   left: 0;
   z-index: 10;

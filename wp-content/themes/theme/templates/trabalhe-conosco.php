@@ -29,12 +29,13 @@ get_header();
 	</article>
 	<?php endif; ?>
 
-	<form id="formTrabalheConosco" method="POST" action="<?php echo get_template_directory_uri(); ?>/functions/form-trabalhe-conosco.php" enctype="multipart/form-data" class="mod-form-trabalhe-conosco">
+	<form id="formTrabalheConosco" method="POST" action="<?php echo get_template_directory_uri(); ?>/functions/sendEmail.php" enctype="multipart/form-data" class="mod-form-trabalhe-conosco jquery-form">
 		<div class="section section-dados-pessoais">
 			<div class="wrapper">
 				<div class="page-header">
 					<h1>Dados Pessoais</h1>
 				</div>
+				<input type="hidden" name="Assunto" value="Trabalhe conosco - Prosperity">
 				<div class="inputs-group">
 					<input required name="Nome" type="text" placeholder="Nome completo">
 					<input required name="RG" type="text" placeholder="RG/Emissão">

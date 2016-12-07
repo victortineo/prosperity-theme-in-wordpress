@@ -79,7 +79,6 @@ $.getScript( url, function() {
 * * * * * * * * * * * * * * * * * * */
 	var owl2 =  $("#slider-services");
   	owl2.owlCarousel({
-      items: 4,
       dots: true,
       responsive: {
         0: {
@@ -88,11 +87,8 @@ $.getScript( url, function() {
         480: {
           items: 2,
         },
-        768: {
-          items: 3,
-        },
         970: {
-          items: 4,
+          items: 3,
         }
       }
   	});
@@ -126,7 +122,6 @@ var owl4 =  $("#quem-atendemos-owl");
     items: 1,
     dots: true,
     dotsContainer: '#carousel-custom-dots',
-    animateOut: 'fadeOut',
     autoHeight: true,
   });
   $('.owl-dot').click(function () {
@@ -175,7 +170,16 @@ function zigzag(e) {
 }
 url = 'http://madknow.com.br/prosperity/wp-content/themes/theme/assets/libraries/bootstrap/dist/js/bootstrap.min.js';
 $.getScript( url, function(){
-
+  /* * * * * * * * * * * * * * * * * * 
+  *        Show tab nav
+  * * * * * * * * * * * * * * * * * * */
+  var hash = window.location.hash;
+  if(!hash == '') {
+    hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+      $('html, body').animate({
+      scrollTop: ($(hash).parent().offset().top) - 75
+    }, 1000); // Tempo em ms que a animação irá durar
+  }
 });
 /* * * * * * * * * * * * * * * * * * 
 *   Formulário trabalhe conosco
@@ -184,15 +188,16 @@ url = 'http://madknow.com.br/prosperity/wp-content/themes/theme/assets/libraries
 $.getScript( url, function(){
 
   var $trabalheConosco = $('#formTrabalheConosco');
-  var $waiting =  $('#formTrabalheConosco #response .waiting');
-  var $success =  $('#formTrabalheConosco #response .success');
-  var $error =  $('#formTrabalheConosco #response .error');
-  $trabalheConosco.on('submit', function(event) {
+  var $form = $('.jquery-form');
+  var $waiting =  $('.jquery-form #response .waiting');
+  var $success =  $('.jquery-form #response .success');
+  var $error =  $('.jquery-form #response .error');
+  $form.on('submit', function(event) {
     event.preventDefault();
     $waiting.css('display', 'block');
     $(this).ajaxSubmit({
       success: function(response) {
-        $trabalheConosco[0].reset();
+        $form[0].reset();
         $waiting.css('display', 'none');
         $success.css('display', 'block');
       },
@@ -242,5 +247,23 @@ function adicionarProfissao(e) {
     $adicionaProfissao.css('display', 'none');
   }
 }
-
+/* * * * * * * * * * * * * * * * * * 
+*           Scroll animation
+* * * * * * * * * * * * * * * * * * */
+$(function() {
+  $('.link a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
 });
+
+
+}); // READY

@@ -7,18 +7,17 @@
  */
 
 get_header(); ?>
-
-
-	
+<figure class="mod-banner-page mod-banner-page-post" style="background-image: url('<?php echo get_template_directory_uri() . '/assets/images/trabalhe-conosco.jpg' ?>');">
+	<img class="sr-only" src="<?php echo get_template_directory_uri() . '/assets/images/trabalhe-conosco.jpg' ?>" alt="Resultados">
+	<figcaption class="banner-caption">
+		<div class="underline"></div>
+		<h1><?php printf( __( 'Search Results for: %s', 'odin' ), get_search_query() ); ?></h1>
+	</figcaption>
+	<div class="mouse"></div>
+</figure>	
 </header>
 
 <main id="content" class="mod-blog blog" tabindex="-1" role="main">
-	<article class="page-content">
-		<div class="wrapper">
-			<?php printf( __( 'Search Results for: %s', 'odin' ), get_search_query() ); ?>
-		</div>
-	</article>
-
 <div class="wrapper posts-wrapper">
 <?php if ( have_posts() ): ?>
 <section class="posts">
@@ -46,6 +45,12 @@ get_header(); ?>
 		</div>
 	</article>
 <?php endwhile; wp_reset_query(); echo odin_pagination( 2, 1, false, $inner_query ); ?>
+</section>
+<?php else: ?>
+<section class="posts">
+	<header class="page-header">
+		<h2>Pesquisa sem resultados.</h2>
+	</header>
 </section>
 <?php endif; ?>
 <?php get_sidebar(); ?>

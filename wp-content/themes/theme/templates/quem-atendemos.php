@@ -30,7 +30,7 @@ $cases = get_field('cases');
 	</article>
 	<?php endif; ?>
 
-<?php if( have_rows('depoimentos') ): ?>
+<!-- <?php if( have_rows('depoimentos') ): ?>
 	
 	<section class="mod-cases-slider">
 		<div id="quem-atendemos-owl" class="owl-carousel">
@@ -56,7 +56,7 @@ $cases = get_field('cases');
 			<li class='owl-dot'></li>
 		</ul>
 	</section>
-<?php endif; ?>
+<?php endif; ?> -->
 
 <?php if ($cases): ?>
 	<!-- Sistema de abas -->

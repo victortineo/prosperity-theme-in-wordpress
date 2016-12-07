@@ -10,7 +10,7 @@
  */
 ?>
 
-<footer id="footer" class="footer" role="contentinfo">
+<footer id="contato" class="footer" role="contentinfo">
 <div class="wrapper">
 	<div class="widget form">
 		<strong class="title">FALE CONOSCO</strong>
@@ -44,31 +44,51 @@
 	<div class="widget">
 		<strong class="title">ARTIGOS RECENTES</strong>
 		<ul>
-			<li>> <a href="#">Lorem ipsum.</a></li>
-			<li>> <a href="#">Distinctio, dolorum!</a></li>
-			<li>> <a href="#">Recusandae, laborum.</a></li>
-			<li>> <a href="#">Repellat, eum.</a></li>
-			<li>> <a href="#">Repellendus, excepturi!</a></li>
+		<?php 
+		$args = array(
+			'post_type' => 'post',
+			'posts_per_page' => 5
+		);
+		$inner_query = new WP_Query( $args );
+		while ($inner_query->have_posts()): $inner_query->the_post(); ?>
+			<li>> <a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
+		<?php endwhile ?>
 		</ul>
 	</div>
 	<div class="widget">
 		<strong class="title">CASES DE SUCESSOS</strong>
 		<ul>
-			<li>> <a href="#">Lorem ipsum.</a></li>
-			<li>> <a href="#">Distinctio, dolorum!</a></li>
-			<li>> <a href="#">Recusandae, laborum.</a></li>
-			<li>> <a href="#">Repellat, eum.</a></li>
-			<li>> <a href="#">Repellendus, excepturi!</a></li>
+			<?php 
+			$args = array(
+				'post_type' => 'depoimentos',
+				'posts_per_page' => 8,
+				'order'		=> 'ASC'
+			);
+			$inner_query = new WP_Query( $args );
+			$count=0;
+			while ($inner_query->have_posts()): $inner_query->the_post();
+			$count++;
+			?>
+			<li>> <a href="<?php bloginfo('url'); ?>/o-que-fazemos/#depoimento<?=$count?>"><?php the_title() ?></a></li>
+		<?php endwhile ?>
 		</ul>
 	</div>
 	<div class="widget">
 		<strong class="title">SERVIÇOS</strong>
 		<ul>
-			<li>> <a href="#">Lorem ipsum.</a></li>
-			<li>> <a href="#">Distinctio, dolorum!</a></li>
-			<li>> <a href="#">Recusandae, laborum.</a></li>
-			<li>> <a href="#">Repellat, eum.</a></li>
-			<li>> <a href="#">Repellendus, excepturi!</a></li>
+		<?php 
+			$args = array(
+				'post_type' => 'servicos',
+				'posts_per_page' => 8,
+				'order'		=> 'ASC'
+			);
+			$inner_query = new WP_Query( $args );
+			$count=0;
+			while ($inner_query->have_posts()): $inner_query->the_post();
+			$count++;
+			?>
+			<li>> <a href="<?php bloginfo('url'); ?>/o-que-fazemos/#servico<?=$count?>"><?php the_title() ?></a></li>
+		<?php endwhile ?>
 		</ul>
 	</div>
 
@@ -76,7 +96,7 @@
 		<strong class="title">ESCRITÓRIO</strong>
 		<div class="content">
 			<i class="icon-marker"></i>
-			<a href="#">Rua Lorem impsum, 123, São Paulo - SP</a>
+			<a>Rua Lorem impsum, 123, São Paulo - SP</a>
 		</div>
 		<div class="content">
 			<i class="icon-phone"></i>
@@ -103,9 +123,9 @@
 </div><!-- .corporate -->
 </footer><!-- #footer -->
 
-<div class="mod-postits">
-<a href="#"><i class="icon-phone"></i></a>
-<a href="#"><i class="icon-marker"></i></a>
+<div class="mod-postits link">
+<a href="#contato"><i class="icon-phone"></i></a>
+<a href="#contato"><i class="icon-marker"></i></a>
 </div>
 
 <?php wp_footer(); ?>

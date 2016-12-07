@@ -308,6 +308,16 @@ if( function_exists('acf_add_options_page') ) {
  
 }
 /**
+ * Mudar resultados de pesquisa
+ */
+function wpshock_search_filter( $query ) {
+    if ( $query->is_search ) {
+        $query->set( 'post_type', array('post') );
+    }
+    return $query;
+}
+add_filter('pre_get_posts','wpshock_search_filter');
+/**
  * Habilitar uploads de svg
  */
 function  svgUploads ( $mimes )  { 

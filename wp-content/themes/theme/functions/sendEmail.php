@@ -7,11 +7,13 @@ foreach($_POST as $campo => $valor){
    	$nomeUsuario = $valor;
    } else if($campo == 'E-mail') {
    	$emailUsuario = $valor;
+   } else if($campo == 'Assunto') {
+   	$assunto = $valor;
    }
 }
 
 // PHP MAILER
-require 'templates/trabalhe-conosco.php';
+require 'templates/template-email.php';
 require 'PHPMailer/PHPMailerAutoload.php';
 $mail = new PHPMailer;
 $mail->CharSet = 'UTF-8';
@@ -38,7 +40,7 @@ $mail->addReplyTo($emailUsuario, $nomeUsuario);
 
 $mail->AddAttachment($_FILES['curriculo']['tmp_name'], $_FILES['curriculo']['name']);
 $mail->isHTML(true);                                  // Set email format to HTML
-$mail->Subject = 'Trabalhe Conosco - Prosperity';
+$mail->Subject = $assunto;
 $mail->Body    = $template;
 
 if(!$mail->send()) {

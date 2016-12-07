@@ -28,7 +28,11 @@ $slider='';
 					<?php the_content(); ?>
 				</div>
 				<div class="item-footer">
-					<a href="#" class="button-1">SAIBA MAIS</a>
+					<a href="<?=get_field('link')?>" class="button-1"><?php if (get_field('button-name')): ?>
+						<?=get_field('button-name')?>
+					<?php else: ?>
+						SAIBA MAIS
+					<?php endif ?></a>
 					<div class="controls">
 						<a href="#" class="button prev"><</a>
 						<a href="#" class="button next">></a>
@@ -94,7 +98,7 @@ $slider='';
 					<img src="<?php the_sub_field('icon') ?>" alt="<?php the_sub_field('content') ?>">
 				</figure>
 				<?php the_sub_field('content') ?>
-				<a href="<?php the_sub_field('url') ?>" title="<?php the_sub_field('titleurl') ?>"><?php the_sub_field('titleurl') ?> <i class="icon icon-arrow"></i></a>
+				<a href="<?php bloginfo('url'); ?>/o-que-fazemos/<?php the_sub_field('url') ?>" title="<?php the_sub_field('titleurl') ?>"><?php the_sub_field('titleurl') ?> <i class="icon icon-arrow"></i></a>
 			</div>
 		<?php endwhile; ?>
 		</div>

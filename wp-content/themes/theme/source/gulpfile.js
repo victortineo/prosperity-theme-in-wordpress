@@ -82,12 +82,11 @@ gulp.task('imagemin', function() {
 // Escuta
 
 /* Alias */
-gulp.task('default', ['stylus', 'uglify', 'imagemin', 'copy', 'minify-css', 'minify-html', 'watch']);
+gulp.task('default', ['stylus', 'uglify', 'imagemin', 'copy', 'minify-css',  'watch']);
 gulp.task('watch', function(){
     gulp.watch('source/images/**/*', ['imagemin']);
     gulp.watch('source/stylus/**/*.styl', ['stylus']);
     gulp.watch('source/stylesheets/*.css', ['minify-css']);
-    gulp.watch('source/*.html', ['minify-html']);
     gulp.watch('source/scripts/**/*.js', ['uglify']);
     gulp.watch(['source/{fonts,libraries}/**/*'], ['copy']);
 });

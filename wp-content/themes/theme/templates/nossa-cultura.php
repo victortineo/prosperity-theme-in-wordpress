@@ -30,14 +30,13 @@ $equipe = get_field('equipe');
 		</div>
 	</article>
 	<?php endif; ?>
-	<?php if( have_rows('zigzag') ): ?>
+	<!-- <?php if( have_rows('zigzag') ): ?>
 	<?php while ( have_rows('zigzag') ) : the_row(); ?>
 	<?php 
 		$titulo = get_sub_field('titulo');
 		$texto = get_sub_field('texto');
 		$imagem = get_sub_field('imagem');
 	?>
-	<!-- Zigzag -->
 	<section class="zig zig__n1">
 	  <div class="row">
 	    <div class="col-xs-12 col-sm-6 zig__content-n1" style="background-image: url('<?php echo $imagem; ?>');">
@@ -77,7 +76,7 @@ $equipe = get_field('equipe');
 	  </div>
 	</section>
 	<?php endwhile; ?>
-	<?php endif; ?>
+	<?php endif; ?> -->
 
 	<?php if ($equipe): ?>
 	<section class="mod-pessoas">

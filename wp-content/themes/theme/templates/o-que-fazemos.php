@@ -82,6 +82,7 @@ $servicos = get_field('servicos');
 			while ($inner_query->have_posts()): $inner_query->the_post();
 			$icone = get_field('icone');
 			$count++;
+			$panel = 'panel-content-'.$count;
 			?>
 			<article role="tabpanel" class="tab-pane fade <?php if($count == 1): ?>in active<?php endif; ?>" id="servico<?php echo $count; ?>">
 				<div class="page-header">
@@ -96,11 +97,11 @@ $servicos = get_field('servicos');
 					$texto = get_sub_field('texto');
 				?>
 				  <div class="panel-content">
-			        <h2><a class="panel-button <?php if($inner_count != 1): ?>collapsed<?php endif; ?>" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $inner_count; ?>" aria-expanded="true" aria-controls="collapse<?php echo $inner_count; ?>">
+			        <h2><a class="panel-button <?php if($inner_count != 1): ?>collapsed<?php endif; ?>" role="button" data-toggle="collapse" data-parent="#accordion" href="#<?=$panel?><?php echo $inner_count; ?>" aria-expanded="true" aria-controls="<?=$panel?><?php echo $inner_count; ?>">
 			          <div class="titulo"><?php echo $titulo; ?></div>
 			          <div class="panel-caret-wrapper"><span class="panel-caret">  <i class="fa fa-caret-up" aria-hidden="true"></i></span></div>
 			        </a></h2>
-				    <div id="collapse<?php echo $inner_count; ?>" class="panel-collapse collapse <?php if($inner_count == 1): ?>in<?php endif; ?>" role="tabpanel" aria-labelledby="collapse<?php echo $inner_count; ?>">
+				    <div id="<?=$panel?><?php echo $inner_count; ?>" class="panel-collapse collapse <?php if($inner_count == 1): ?>in<?php endif; ?>" role="tabpanel" aria-labelledby="<?=$panel?><?php echo $inner_count; ?>">
 				      <?php echo $texto; ?>
 				    </div>
 				  </div><!-- .panel-content -->

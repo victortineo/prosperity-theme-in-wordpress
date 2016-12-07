@@ -73,7 +73,7 @@
 						'theme_location' => 'main-menu',
 						'depth'          => 2,
 						'container'      => false,
-						'menu_class'     => 'menu-list',
+						'menu_class'     => 'menu-list link',
 						'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
 						'walker'         => new Odin_Bootstrap_Nav_Walker()
 					)
