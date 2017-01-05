@@ -34,7 +34,7 @@ if($the_query->have_posts()):
 					<?php the_content(); ?>
 				</div>
 				<div class="footer">
-					<a href="#" class="button-1">SAIBA MAIS</a>
+					<a href="#" class="button-1">SAIBA MAIS eu aqui</a>
 					<div class="controls">
 						<a href="#" class="button prev"><</a>
 						<a href="#" class="button next">></a>

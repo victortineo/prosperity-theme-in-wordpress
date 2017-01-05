@@ -9,15 +9,19 @@
 	font-size rem(16px)
 	background-color transparent
 	&:first-child
-		min-height 100vh
-		margin-bottom rem(-160px)
+		margin-bottom rem(-160px)		
+		+above(380px)
+			min-height 100vh
+		+below(380px)
+			min-height 380px
+			margin-bottom rem(-30px)
 		.content
 			vertical-center(-50%)
 			top 40% !important
 			padding rem(0 10px)
 		+above(rem(768px))
 			background-attachment fixed
-	&:nth-of-type(3)
+	&:nth-of-type(3)	
 		+above(rem(768px))
 			background-attachment fixed
 	.content
@@ -33,7 +37,14 @@
 			font-size rem(36px)
 		strong
 			font-weight $font-semi
-	p
+	p,
+	li
 		font-size rem(16px)
 		font-weight $font-light
-		color alpha($white, 60%)
+		color alpha($white, 60%) 	
+		padding-bottom rem(10px)
+		list-style outside disc
+	ul 
+		max-width 450px
+		margin 0 auto
+		text-align left

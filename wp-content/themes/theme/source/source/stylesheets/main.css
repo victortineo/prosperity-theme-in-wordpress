@@ -2188,6 +2188,9 @@ h6 {
   font-size: 0.625rem;
   color: #fff;
 }
+#slider-services .item p {
+  min-height: 10.5rem;
+}
 .subsections {
   position: relative;
   height: 90vh;
@@ -2200,8 +2203,18 @@ h6 {
   background-color: transparent;
 }
 .subsections:first-child {
-  min-height: 100vh;
   margin-bottom: -10rem;
+}
+@media only screen and (min-width: 380px) {
+  .subsections:first-child {
+    min-height: 100vh;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .subsections:first-child {
+    min-height: 380px;
+    margin-bottom: -1.875rem;
+  }
 }
 .subsections:first-child .content {
   position: absolute;
@@ -2245,10 +2258,18 @@ h6 {
 .subsections h1 strong {
   font-weight: 600;
 }
-.subsections p {
+.subsections p,
+.subsections li {
   font-size: 1rem;
   font-weight: 300;
   color: rgba(255,255,255,0.6);
+  padding-bottom: 0.625rem;
+  list-style: outside disc;
+}
+.subsections ul {
+  max-width: 450px;
+  margin: 0 auto;
+  text-align: left;
 }
 .zig {
   overflow: hidden;
@@ -2664,7 +2685,7 @@ h6 {
   }
 }
 .menu-site .wrapper {
-  max-width: 53.125rem;
+  max-width: 59.375rem;
 }
 .menu-site .branding {
   float: left;
